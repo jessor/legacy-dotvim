@@ -28,7 +28,8 @@ set mouse=a
 
 " Cursorline
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=black 
+hi CursorLine cterm=NONE ctermbg=black 
+hi MatchParen cterm=NONE ctermbg=white ctermfg=black
 
 au BufRead /tmp/mutt-* set tw=72
 
