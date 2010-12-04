@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/jesse/code/awesome-configs/scratch'
+let g:netrw_dirhist_2='/home/jesse/code/fbp/app/apps/hello_world'
+let g:netrw_dirhist_3='/home/jesse/code/awesome-configs'
+let g:netrw_dirhist_4='/home/jesse/code'
+let g:netrw_dirhist_5='/home/jesse/code/printify/app/controllers'
+let g:netrw_dirhist_6='/home/jesse/code/printify/config/environments'
+let g:netrw_dirhist_7='/home/jesse/code/printify/app/views/orders'
+let g:netrw_dirhist_8='/home/jesse/.wine'
