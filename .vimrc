@@ -31,13 +31,17 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=black 
 hi MatchParen cterm=NONE ctermbg=white ctermfg=black
 
-au BufRead /tmp/mutt-* set tw=72
+
+" plugins in bundle/ ---------------------------------------------------
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 
 " plugins --------------------------------------------------------------
 
 " NERDTree 
 :nmap <F8> :NERDTreeToggle<CR>
+
 " vim-buftabs
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
@@ -63,4 +67,3 @@ if has('gui_running')
 	colorscheme ir_black
 	set guifont=Terminus\ 8
 endif
-
