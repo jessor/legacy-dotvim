@@ -31,6 +31,11 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=black 
 hi MatchParen cterm=NONE ctermbg=white ctermfg=black
 
+" toggle autoindenting for pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 
 " plugins in bundle/ ---------------------------------------------------
 call pathogen#runtime_append_all_bundles()
