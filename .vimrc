@@ -26,11 +26,6 @@ set showmode
 set title
 set mouse=a
 
-" Cursorline
-set cursorline
-hi CursorLine cterm=NONE ctermbg=black 
-hi MatchParen cterm=NONE ctermbg=white ctermfg=black
-
 " toggle autoindenting for pasting
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
@@ -50,6 +45,13 @@ call pathogen#helptags()
 " vim-buftabs
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
+
+
+" themes ----------------------------------------------------------------
+
+"colorscheme ir_black
+"hi CursorLine cterm=NONE ctermbg=black 
+"hi MatchParen cterm=NONE ctermbg=white ctermfg=black
 
 
 " functions -------------------------------------------------------------
