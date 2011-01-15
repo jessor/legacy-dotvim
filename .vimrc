@@ -3,7 +3,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-
 set history=40
 set encoding=utf-8
 
@@ -17,7 +16,6 @@ set tabstop=4
 "set tw=80
 
 set nocompatible
-"set number
 set nobackup
 set ruler
 set showcmd
@@ -30,6 +28,13 @@ set mouse=a
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" toggle linewrap
+map <F3> :set nowrap!<CR>
+
+" toggle linenumbers
+set number
+nnoremap <F4> :set nonumber!<CR>
 
 
 " plugins in bundle/ ---------------------------------------------------
