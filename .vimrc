@@ -34,7 +34,7 @@ map <F3> :set nowrap!<CR>
 
 " toggle linenumbers
 set number
-nnoremap <F4> :set nonumber!<CR>
+nnoremap <F4> :call g:ToggleNuMode()<CR>
 
 
 " plugins in bundle/ ---------------------------------------------------
@@ -70,6 +70,14 @@ function! CheckForShebang()
 	endif
 endfunction
 map <F5> :call CheckForShebang()<CR>
+
+function! g:ToggleNuMode()
+	if(&rnu == 1)
+		set nu
+	else
+		set rnu
+	endif
+endfunc
 
 
 " gui ------------------------------------------------------------------
