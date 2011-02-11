@@ -51,6 +51,8 @@ call pathogen#helptags()
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
 
+" taglist
+nnoremap <silent> <F9> :TlistToggle<CR>
 
 " themes ----------------------------------------------------------------
 
