@@ -56,10 +56,20 @@ nnoremap <silent> <F9> :TlistToggle<CR>
 
 " themes ----------------------------------------------------------------
 
-"colorscheme ir_black
-"hi CursorLine cterm=NONE ctermbg=black 
-"hi MatchParen cterm=NONE ctermbg=white ctermfg=black
-
+" some color adjustments, tuned to go well with my termcolors:
+" https://github.com/jessor/dotfiles/blob/master/Xdefaults
+hi Cursor cterm=none ctermbg=darkyellow ctermfg=white
+hi Visual cterm=none ctermbg=darkyellow ctermfg=black
+hi StatusLine cterm=none ctermbg=black ctermfg=darkyellow
+hi TabLineSel cterm=none ctermbg=darkyellow ctermfg=white
+hi MatchParen cterm=underline ctermbg=black ctermfg=darkyellow
+hi! link VertSplit StatusLine
+hi! link StatusLineNC StatusLine
+hi! link LineNr StatusLine
+hi! link TabLineFill StatusLine
+hi! link TabLine StatusLine
+hi! link CursorColumn StatusLine
+hi! link CursorLine StatusLine
 
 " functions -------------------------------------------------------------
 
