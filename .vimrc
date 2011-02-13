@@ -36,7 +36,6 @@ map <F3> :set nowrap!<CR>
 set number
 nnoremap <F4> :call g:ToggleNuMode()<CR>
 
-
 " plugins in bundle/ ---------------------------------------------------
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -53,6 +52,15 @@ noremap <f2> :bnext<CR>
 
 " taglist
 nnoremap <silent> <F9> :TlistToggle<CR>
+
+" toggle indent-guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=darkyellow
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
+map <F5> :IndentGuidesToggle<CR>
+
 
 " themes ----------------------------------------------------------------
 
@@ -72,16 +80,6 @@ hi! link CursorColumn StatusLine
 hi! link CursorLine StatusLine
 
 " functions -------------------------------------------------------------
-
-function! CheckForShebang()
-	if (match( getline(1) , '^\#!') == 0)
-		map <F5> :!./%<CR>
-		:!./%
-	else
-		unmap <F%>
-	endif
-endfunction
-map <F5> :call CheckForShebang()<CR>
 
 function! g:ToggleNuMode()
 	if(&rnu == 1)
