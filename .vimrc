@@ -13,7 +13,6 @@ set shiftwidth=4
 set smartindent
 set smarttab
 set tabstop=4
-"set tw=80
 
 set nocompatible
 set nobackup
@@ -23,6 +22,10 @@ set showmatch
 set showmode
 set title
 set mouse=a
+set cursorline
+
+
+" builtin bindings -----------------------------------------------------
 
 " toggle autoindenting for pasting
 nnoremap <F2> :set invpaste paste?<CR>
@@ -36,12 +39,12 @@ map <F3> :set nowrap!<CR>
 set number
 nnoremap <F4> :call g:ToggleNuMode()<CR>
 
-" plugins in bundle/ ---------------------------------------------------
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 
 " plugins --------------------------------------------------------------
+
+" plugins in bundle/
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " NERDTree 
 :nmap <F8> :NERDTreeToggle<CR>
@@ -62,22 +65,23 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 map <F5> :IndentGuidesToggle<CR>
 
 
-" themes ----------------------------------------------------------------
+" style -----------------------------------------------------------------
 
 " some color adjustments, tuned to go well with my termcolors:
 " https://github.com/jessor/dotfiles/blob/master/Xdefaults
 hi Cursor cterm=none ctermbg=darkyellow ctermfg=white
-hi Visual cterm=none ctermbg=darkyellow ctermfg=black
+hi CursorLine cterm=NONE ctermbg=black
+hi MatchParen cterm=underline ctermbg=black ctermfg=darkyellow
 hi StatusLine cterm=none ctermbg=black ctermfg=darkyellow
 hi TabLineSel cterm=none ctermbg=darkyellow ctermfg=white
-hi MatchParen cterm=underline ctermbg=black ctermfg=darkyellow
+hi Visual cterm=none ctermbg=darkyellow ctermfg=black
 hi! link VertSplit StatusLine
 hi! link StatusLineNC StatusLine
 hi! link LineNr StatusLine
 hi! link TabLineFill StatusLine
 hi! link TabLine StatusLine
 hi! link CursorColumn StatusLine
-hi! link CursorLine StatusLine
+
 
 " functions -------------------------------------------------------------
 
