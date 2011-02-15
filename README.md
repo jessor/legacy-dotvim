@@ -19,3 +19,22 @@ install:
     cd ~
     ln -s ~/code/vim-setup-jessor .vim
     ln -s ~/.vim/.vimrc
+
+
+bindings
+--------
+
+insert mode:
+
+* F2  - toggle mode keeping the original indentation when pasting
+
+
+normal mode:
+
+* F1 - switch to previous buffer
+* F2 - switch to next buffer
+* F3 - toggles word wrapping
+* F4 - toggles line number display
+* F5 - toggle indent-guides
+* F8 - toggles NERDTree
+* F9 - toggles Taglist (shows an index of functions and variables in the buffer)
