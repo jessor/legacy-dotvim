@@ -24,6 +24,11 @@ set title
 set mouse=a
 set cursorline
 
+" let's not store backup files in the project folder
+silent execute '!mkdir -p ~/.vim_backups'
+set backupdir=~/.vim_backups//
+set directory=~/.vim_backups//
+
 
 " builtin bindings -----------------------------------------------------
 
