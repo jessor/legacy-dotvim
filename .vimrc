@@ -44,6 +44,9 @@ noremap <silent> <F3> :call ToggleWrap()<CR>
 set number
 nnoremap <F4> :call g:ToggleNuMode()<CR>
 
+" copy selected text to clipboard with ^C
+map <C -c> "+y
+
 
 " plugins --------------------------------------------------------------
 
