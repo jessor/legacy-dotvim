@@ -72,6 +72,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=darkyellow
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 map <F5> :IndentGuidesToggle<CR>
 
+" gundo tree
+nnoremap <F6> :GundoToggle<CR>
+
 
 " style -----------------------------------------------------------------
 

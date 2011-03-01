@@ -36,5 +36,6 @@ normal mode:
 * F3 - toggles word wrapping
 * F4 - toggles line number display
 * F5 - toggle indent-guides
+* F6 - toggle Gundo undo tree
 * F8 - toggles NERDTree
 * F9 - toggles Taglist (shows an index of functions and variables in the buffer)
