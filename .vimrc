@@ -47,6 +47,12 @@ nnoremap <F4> :call g:ToggleNuMode()<CR>
 " copy selected text to clipboard with ^C
 map <C -c> "+y
 
+" convenience over simplicity
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 
 " plugins --------------------------------------------------------------
 
