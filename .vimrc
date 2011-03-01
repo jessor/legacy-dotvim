@@ -52,6 +52,7 @@ map <C -c> "+y
 :command Wq wq
 :command W w
 :command Q q
+ino ;; <Esc>
 
 
 " plugins --------------------------------------------------------------
