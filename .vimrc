@@ -44,6 +44,9 @@ noremap <silent> <F3> :call ToggleWrap()<CR>
 set number
 nnoremap <F4> :call g:ToggleNuMode()<CR>
 
+" toggle highlighting on/off, show current value.
+:noremap <F7> :set hlsearch! hlsearch?<CR>
+
 " copy selected text to clipboard with ^C
 map <C -c> "+y
 
@@ -99,6 +102,7 @@ hi! link LineNr StatusLine
 hi! link TabLineFill StatusLine
 hi! link TabLine StatusLine
 hi! link CursorColumn StatusLine
+hi! link Search Visual
 
 
 " functions -------------------------------------------------------------
