@@ -24,6 +24,9 @@ set title
 set mouse=a
 set cursorline
 
+" overwrite default shiftwidth for ruby files
+autocmd FileType ruby setlocal shiftwidth=2
+
 " let's not store backup files in the project folder
 silent execute '!mkdir -p ~/.vim_backups'
 set backupdir=~/.vim_backups//
