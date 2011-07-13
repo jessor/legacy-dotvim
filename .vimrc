@@ -53,6 +53,10 @@ nnoremap <F4> :call g:ToggleNuMode()<CR>
 " copy selected text to clipboard with ^C
 map <C -c> "+y
 
+" press \vs to split file in multiple columns, Ctrl-W o to go back to a single
+" window. http://vim.wikia.com/wiki/View_text_file_in_two_columns
+:noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
 " convenience over simplicity
 :command WQ wq
 :command Wq wq
