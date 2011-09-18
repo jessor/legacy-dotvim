@@ -169,6 +169,16 @@ endfunction
 if &wrap
   call WrapIt()
 endif
+ 
+function NoMoreUmlauts()
+  if search ("ä") | :1,$s/ä/\&auml;/g | endif
+    if search ("Ä") | :1,$s/Ä/\&Auml;/g | endif
+    if search ("ö") | :1,$s/ö/\&ouml;/g | endif
+    if search ("Ö") | :1,$s/Ö/\&Ouml;/g | endif
+    if search ("ü") | :1,$s/ü/\&uuml;/g | endif
+    if search ("Ü") | :1,$s/Ü/\&Uuml;/g | endif
+    if search ("ß") | :1,$s/ß/\&szlig;/g | endif
+endfunction
 
 
 " gui ------------------------------------------------------------------
