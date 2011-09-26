@@ -92,6 +92,9 @@ map <F5> :IndentGuidesToggle<CR>
 " gundo tree
 nnoremap <F6> :GundoToggle<CR>
 
+" testing, reverse join lines ;)
+nnoremap <C-J> ciW<CR><Esc>:if match( @", "^\\s*$") < 0<Bar>exec "norm P-$diw+"<Bar>endif<CR>
+
 
 " style -----------------------------------------------------------------
 
