@@ -188,6 +188,6 @@ endfunction
 
 if has('gui_running')
 	set guioptions-=T  " no toolbar
-	colorscheme ir_black
-	set guifont=Terminus\ 8
+	colorscheme darkmate
+	set guifont=Menlo Regular:h13
 endif

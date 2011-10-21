@@ -28,3 +28,12 @@
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
+[submodule "bundle/scheme-diablo3"]
+	path = bundle/scheme-diablo3
+	url = git://github.com/vim-scripts/Diablo3.git
+[submodule "bundle/scheme-lucius"]
+	path = bundle/scheme-lucius
+	url = git://github.com/vim-scripts/Lucius.git
+[submodule "bundle/scheme-darkmate/colors"]
+	path = bundle/scheme-darkmate/colors
+	url = git://github.com/matsko/Vim-Darkmate.git
