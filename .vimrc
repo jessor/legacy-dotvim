@@ -67,10 +67,6 @@ ino ;; <Esc>
 
 " plugins --------------------------------------------------------------
 
-" plugins in bundle/
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 " NERDTree 
 :nmap <F8> :NERDTreeToggle<CR>
 
