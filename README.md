@@ -1,21 +1,17 @@
-my vim config =)
-================
+my cozy vim config ^_^
+======================
 
-used mainly for rails development. plugins are git submodules where possible, thanks to [pathogen](https://github.com/tpope/vim-pathogen).
+uses gmarik/vundle to manage plugins, plugin list in bundles.vim
 
 
-download:
----------
+download, setup:
+----------------
 
     cd ~/code
     git clone git://github.com/jessor/vim-setup-jessor.git
     cd vim-setup-jessor
-    git submodule update --init
-
-
-install:
---------
-
+    git clone git://github.com/gmarik/vundle.git bundle/vundle
+    vim -u bundles.vim +BundleInstall +qall
     cd ~
     ln -s ~/code/vim-setup-jessor .vim
     ln -s ~/.vim/.vimrc

@@ -67,6 +67,9 @@ ino ;; <Esc>
 
 " plugins --------------------------------------------------------------
 
+" Vundle
+source ~/.vim/bundles.vim
+
 " NERDTree 
 :nmap <F8> :NERDTreeToggle<CR>
 
