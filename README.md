@@ -12,6 +12,7 @@ download, setup:
     cd vim-setup-jessor
     git clone git://github.com/gmarik/vundle.git bundle/vundle
     vim -u bundles.vim +BundleInstall +qall
+    cd bundle/Command-T/ruby/command-t && rvm use system ; ruby extconf.rb && make
     cd ~
     ln -s ~/code/vim-setup-jessor .vim
     ln -s ~/.vim/.vimrc
