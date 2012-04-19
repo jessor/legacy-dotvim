@@ -24,6 +24,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'jessor/Darkmate'
+Bundle 'chriskempson/tomorrow-theme', {'rtp':'vim/'}
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'wincent/Command-T'
