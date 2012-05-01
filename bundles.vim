@@ -27,7 +27,7 @@ Bundle 'jessor/Darkmate'
 Bundle 'chriskempson/tomorrow-theme', {'rtp':'vim/'}
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gmarik/sudo-gui.vim'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 " snipmate:
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
