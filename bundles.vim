@@ -28,8 +28,3 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp':'vim/'}
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'kien/ctrlp.vim'
-" snipmate:
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'snipmate-snippets'
-Bundle 'garbas/vim-snipmate'
