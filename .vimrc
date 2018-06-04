@@ -29,8 +29,8 @@ autocmd FileType ruby setlocal shiftwidth=2
 
 " let's not store backup files in the project folder
 silent execute '!mkdir -p ~/.vim_backups'
-set backupdir=~/.vim_backups//
-set directory=~/.vim_backups//
+set backupdir=~/.vim_backups/
+set directory=~/.vim_backups/
 
 
 " builtin bindings -----------------------------------------------------
@@ -81,7 +81,7 @@ noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
 
 " taglist
-nnoremap <silent> <F9> :TlistToggle<CR>
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " toggle indent-guides
 let g:indent_guides_start_level = 2
@@ -91,8 +91,13 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=darkyellow
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 map <F5> :IndentGuidesToggle<CR>
 
-" gundo tree
-nnoremap <F6> :GundoToggle<CR>
+" Undotree
+nnoremap <F6> :UndotreeToggle<CR>
+
+if has("persistent_undo")
+    set undodir=~/.vim/
+    set undofile
+endif
 
 " testing, reverse join lines ;)
 nnoremap <C-J> ciW<CR><Esc>:if match( @", "^\\s*$") < 0<Bar>exec "norm P-$diw+"<Bar>endif<CR>
@@ -191,5 +196,5 @@ endfunction
 if has('gui_running')
 	set guioptions-=T  " no toolbar
 	colorscheme Tomorrow-Night
-	set guifont=Menlo Regular:h13
+	set guifont="Menlo Regular":h13
 endif
