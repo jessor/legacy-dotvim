@@ -5,10 +5,10 @@ filetype off
 " no syntax hilight on my mac os x setup without resetting this:
 syntax on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins!
 Bundle 'mbbill/undotree'
@@ -30,3 +30,5 @@ Bundle 'majutsushi/tagbar'
 "Bundle 'dsawardekar/wordpress.vim'
 "Bundle 'vim-scripts/po.vim--Jelenak'
 "Bundle 'kien/ctrlp.vim'
+call vundle#end()
+filetype plugin indent on
