@@ -10,9 +10,8 @@ download, setup:
     cd ~/code
     git clone git://github.com/jessor/vim-setup-jessor.git
     cd vim-setup-jessor
-    git clone git://github.com/gmarik/vundle.git bundle/vundle
+    git clone git://github.com/VundleVim/Vundle.vim bundle/vundle
     vim -u bundles.vim +BundleInstall +qall
-    cd bundle/Command-T/ruby/command-t && rvm use system ; ruby extconf.rb && make
     cd ~
     ln -s ~/code/vim-setup-jessor .vim
     ln -s ~/.vim/.vimrc
@@ -31,9 +30,8 @@ normal mode:
 * F1 - switch to previous buffer
 * F2 - switch to next buffer
 * F3 - toggles word wrapping
-* F4 - toggles line number display
-* F5 - toggle indent-guides
-* F6 - toggle Gundo undo tree
-* F7 - toggle hilighting of all search results in document
-* F8 - toggles NERDTree
-* F9 - toggles Taglist (shows an index of functions and variables in the buffer)
+* F5 - toggle Indentline
+* F6 - toggle UndoTree
+* F7 - toggle hilighting of search results
+* F8 - toggle NERDTree
+* F9 - toggle Tagbar
