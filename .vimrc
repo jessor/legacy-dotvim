@@ -2,17 +2,18 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+au BufNewFile,BufRead *.ctp set filetype=php
 
 set history=40
 set encoding=utf-8
 
-set autoindent
-set expandtab "insert spaces instead of tabs
-set scrolloff=3
 set shiftwidth=4
-set smartindent
-set smarttab
 set tabstop=4
+set softtabstop=4
+set expandtab "insert spaces instead of tabs
+set autoindent
+set scrolloff=3
+set smartindent
 
 set nocompatible
 set nobackup
@@ -43,12 +44,9 @@ set showmode
 " toggle linewrap
 noremap <silent> <F3> :call ToggleWrap()<CR>
 
-" toggle linenumbers
-set number
-nnoremap <F4> :call g:ToggleNuMode()<CR>
-
 " toggle highlighting on/off, show current value.
 :noremap <F7> :set hlsearch! hlsearch?<CR>
+set hlsearch! " default: on
 
 " copy selected text to clipboard with ^C
 map <C -c> "+y
@@ -63,9 +61,14 @@ map <C -c> "+y
 " convenience over simplicity
 :command WQ wq
 :command Wq wq
+:command Wqa wqa
+:command Wqa! wqa!
 :command W w
 :command Q q
 ino ;; <Esc>
+
+" surround highlighted text with paranthesis
+xnoremap <leader>s xi()<Esc>P
 
 
 " plugins --------------------------------------------------------------
@@ -75,6 +78,11 @@ source ~/.vim/bundles.vim
 
 " NERDTree 
 :nmap <F8> :NERDTreeToggle<CR>
+" open current directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" automatically open files in new tab
+let NERDTreeMapOpenInTab='<ENTER>'
 
 " vim-buftabs
 noremap <f1> :bprev<CR>
@@ -83,19 +91,17 @@ noremap <f2> :bnext<CR>
 " taglist
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
-" toggle indent-guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=darkyellow
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
-map <F5> :IndentGuidesToggle<CR>
+" Indent Lines
+map <F5> :IndentLinesToggle<CR>
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_setColors = 0
 
 " Undotree
 nnoremap <F6> :UndotreeToggle<CR>
 
 if has("persistent_undo")
-    set undodir=~/.vim/
+    set undodir=~/.vim_backups/
     set undofile
 endif
 
@@ -103,34 +109,7 @@ endif
 nnoremap <C-J> ciW<CR><Esc>:if match( @", "^\\s*$") < 0<Bar>exec "norm P-$diw+"<Bar>endif<CR>
 
 
-" style -----------------------------------------------------------------
-
-" some color adjustments, tuned to go well with my termcolors:
-" https://github.com/jessor/dotfiles/blob/master/Xdefaults
-hi Cursor cterm=none ctermbg=darkyellow ctermfg=white
-hi CursorLine cterm=NONE ctermbg=black
-hi MatchParen cterm=underline ctermbg=black ctermfg=darkyellow
-hi StatusLine cterm=none ctermbg=black ctermfg=darkyellow
-hi TabLineSel cterm=none ctermbg=darkyellow ctermfg=white
-hi Visual cterm=none ctermbg=darkyellow ctermfg=black
-hi! link VertSplit StatusLine
-hi! link StatusLineNC StatusLine
-hi! link LineNr StatusLine
-hi! link TabLineFill StatusLine
-hi! link TabLine StatusLine
-hi! link CursorColumn StatusLine
-hi! link Search Visual
-
-
 " functions -------------------------------------------------------------
-
-function! g:ToggleNuMode()
-	if(&rnu == 1)
-		set nu
-	else
-		set rnu
-	endif
-endfunc
 
 function ToggleWrap()
   if &wrap
@@ -191,10 +170,61 @@ function NoMoreUmlauts()
 endfunction
 
 
-" gui ------------------------------------------------------------------
+" style -----------------------------------------------------------------
+
+" some color adjustments, tuned to go well with my termcolors:
+" https://github.com/jessor/dotfiles/blob/master/Xdefaults
+hi Cursor cterm=none ctermbg=darkyellow ctermfg=white
+hi CursorLine cterm=NONE ctermbg=black
+hi MatchParen cterm=underline ctermbg=black ctermfg=darkyellow
+hi StatusLine cterm=none ctermbg=black ctermfg=darkyellow
+hi TabLineSel cterm=none ctermbg=darkyellow ctermfg=white
+hi Visual cterm=none ctermbg=darkyellow ctermfg=black
+hi! link VertSplit StatusLine
+hi! link StatusLineNC StatusLine
+hi! link LineNr StatusLine
+hi! link TabLineFill StatusLine
+hi! link TabLine StatusLine
+hi! link CursorColumn StatusLine
+hi! link Search Visual
 
 if has('gui_running')
 	set guioptions-=T  " no toolbar
-	colorscheme Tomorrow-Night
 	set guifont="Menlo Regular":h13
 endif
+
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+
+set background=dark " for the dark version
+" set background=light " for the light version
+colorscheme one
+
+
+" Lightline
+set laststatus=2
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'gitbranch#name'
+  \ },
+  \ }
