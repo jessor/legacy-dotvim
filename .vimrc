@@ -24,6 +24,7 @@ set showmode
 set title
 set mouse=a
 set cursorline
+set number
 
 " overwrite default shiftwidth for ruby files
 autocmd FileType ruby setlocal shiftwidth=2
@@ -62,7 +63,6 @@ map <C -c> "+y
 :command WQ wq
 :command Wq wq
 :command Wqa wqa
-:command Wqa! wqa!
 :command W w
 :command Q q
 ino ;; <Esc>
